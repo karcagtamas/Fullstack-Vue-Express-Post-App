@@ -1,24 +1,24 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png" />
-    <PostComponent msg="Welcome to Your Vue.js App" />
+    <PostComponent />
   </div>
 </template>
 
-<script>
-import PostComponent from "./components/PostComponent.vue";
+<script lang="ts">
+import { Component, Vue } from 'vue-property-decorator';
+import PostComponent from './components/PostComponent.vue';
 
-export default {
-  name: "app",
+@Component({
   components: {
     PostComponent
   }
-};
+})
+export default class App extends Vue {}
 </script>
 
 <style>
 #app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
